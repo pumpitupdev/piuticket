@@ -31,7 +31,7 @@ From the other direction, the commands to the controller are represented in the 
 
 
 [Initialization]
-As such, windows (dev) builds will look for it via "\\.\ezusb-0" -> "\\.\ezusb-3" and Linux will search either "/prov/bus/usb/devices" or "/sys/kernel/debug/usb/devices" depending on how fucking... ancient the kernel is.
+As such, windows (dev) builds will look for it via "\\\\.\\ezusb-0" -> "\\\\.\\ezusb-3" and Linux will search either "/prov/bus/usb/devices" or "/sys/kernel/debug/usb/devices" depending on how fucking... ancient the kernel is.
 
 Either way, it's looking for a specific VID/PID combination (0D2F/1004) - where the Linux version will parse the text output of its devices list and Windows will use DeviceIOControl to request the device descriptor via "IOCTL_Ezusb_GET_DEVICE_DESCRIPTOR".
 
