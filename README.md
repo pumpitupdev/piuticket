@@ -41,11 +41,12 @@ Provided that works out, we run "TicketUpdateStatus" from our API and set the gl
 
 ## [API State]
 The game keeps track of the internal state of each dispenser in 4 different states:
-ticketIDLE: No dispensing requests - the default "resting" state.
-ticketSTARTREQ: A dispensing request is being made to a dispenser.
-ticketWAITSTART: A response from the controller is pending to acknowledge the request.
-ticketWAITEND: A response from the controller that the request is completed.
-ticketERROR: An irrecoverable error state.
+
+* ticketIDLE: No dispensing requests - the default "resting" state.
+* ticketSTARTREQ: A dispensing request is being made to a dispenser.
+* ticketWAITSTART: A response from the controller is pending to acknowledge the request.
+* ticketWAITEND: A response from the controller that the request is completed.
+* ticketERROR: An irrecoverable error state.
 
 It keeps track of the state in a local called "Stat".
 
