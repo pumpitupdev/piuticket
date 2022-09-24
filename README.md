@@ -15,16 +15,19 @@ Overall, the interface of the controller is pretty simplistic with 2 relevant bi
 For input from the controller, we get a state bit representing the left and right dispenser and if it's currently available to accept a new command or... from what I understand "busy" which is likely only when it's printing a ticket or hanging.
 
 This is represented in the code as "sensortbl" and lives on the sixth byte of our 8 byte array in bits 0x10 and 0x04. Due to its simplicity, we only have 4 real states that can be represented:
-00000000 -- Both dispensers are idle.
-00000100 -- Player 2 (Right) is dispensing, but Player 1 (Left) is idle.
-00010000 -- Player 1 (Left) is dispensing, but Player 2 (Right) is idle.
-00010100 -- Both dispensers are... dispensing.
+
+* 00000000 -- Both dispensers are idle.
+* 00000100 -- Player 2 (Right) is dispensing, but Player 1 (Left) is idle.
+* 00010000 -- Player 1 (Left) is dispensing, but Player 2 (Right) is idle.
+* 00010100 -- Both dispensers are... dispensing.
+
 
 From the other direction, the commands to the controller are represented in the code as "outtbl" and lives on the third byte of our 8 byte array in bits 1 and 2. Due to its simplicity, we also have only 4 states for this that can be represented:
-00000000 -- No Request to Dispensers.
-00000001 -- Request to Player 1 (Left) dispenser to dispense a ticket.
-00000010 -- Request to Player 2 (Right) dispenser to dispense a ticket.
-00000011 -- Request to both players' dispensers to dispense a ticket.
+
+* 00000000 -- No Request to Dispensers.
+* 00000001 -- Request to Player 1 (Left) dispenser to dispense a ticket.
+* 00000010 -- Request to Player 2 (Right) dispenser to dispense a ticket.
+* 00000011 -- Request to both players' dispensers to dispense a ticket.
 
 
 [Initialization]
