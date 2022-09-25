@@ -125,9 +125,9 @@ If debug isn't enabled, this will also show the ticket dispenser error or "No Ti
 ## Controller Emulation
 Emulating the controller in software then becomes pretty straightforward:
 - On a Read from the controller we:
-	Check the last written state from the game.
-	If P(n) has a new request, and our internal state is clear to accept, we set the output bit.
-		If there is no request, or our internal state is busy, we don't set the output bit.
+	* Check the last written state from the game.
+	* If P(n) has a new request, and our internal state is clear to accept, we set the output bit.
+	* If there is no request, or our internal state is busy, we don't set the output bit.
 
 ## Additional Notes
 It seems like Zero might be buggy and always print for both dispensers. It's possible that this build was not fully finished
